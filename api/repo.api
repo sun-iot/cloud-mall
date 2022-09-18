@@ -1,0 +1,23 @@
+syntax = "v1"
+
+info(
+    title: "type title here"
+    desc: "type desc here"
+    author: "type author here"
+    email: "type email here"
+    version: "type version here"
+)
+// RepoList 库存列表
+// RepoListReply 库存列表返回
+type (
+    RepoList {
+        GoodsID string `json:"goodsId"` // 商品ID
+        LimitNum int64 `json:"limitNum"`
+        Page int64 `json:"page"`
+    }
+    RepoListReply{
+
+    }
+)
+
+

@@ -1,0 +1,28 @@
+syntax = "v1"
+
+// 商品进货
+type InGoods {
+
+}
+
+// 商品上架
+type AddGoods {
+
+}
+
+// 商品下架
+type Goods {
+
+}
+
+// GoodsList 商品列表
+// GoodsListReply 商品列表返回
+type (
+    GoodsList {
+        LimitNum int64 `json:"limitNum"`
+        Page int64 `json:"page"`
+    }
+    GoodsListReply {
+
+    }
+)
