@@ -1,18 +1,9 @@
 syntax = "v1"
 
-info(
-	title: "type title here"
-	desc: "type desc here"
-	author: "type author here"
-	email: "type email here"
-	version: "type version here"
-)
-
-
 type (
 	LoginReq {
-		Username string `json:"username"`
-		Password string `json:"password"`
+		Username string `form:"username"`
+		Password string `form:"password"`
 	}
 
 	LoginReply {
@@ -28,8 +19,8 @@ type (
 // CustomerListReply 用户列表返回
 type (
 	CustomerList {
-		LimitNum int64 `json:"limitNum"`
-		Page int64 `json:"page"`
+		LimitNum int64 `form:"limitNum"`
+		Page int64 `form:"page"`
 	}
 	CustomerListReply{
 

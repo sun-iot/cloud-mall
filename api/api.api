@@ -6,13 +6,6 @@ import (
 	"repo.api"
 )
 
-@server (
-	jwt: Auth
-	group: user
-	middleware: AuthMiddleware
-	prefix: api
-)
-
 service api {
 	@doc "登录"
 	@handler login
@@ -21,18 +14,14 @@ service api {
 	@handler getUserList
 	get /api/v1/user/list (CustomerList) returns (CustomerListReply)
 	
-	@handler getRepoList
-	get /api/v1/repo/list(RepoList) returns(RepoListReply)
-	
-	@handler getGoodsList
-	get /api/v1/goods/list(GoodsList) returns(GoodsListReply)
-	
 }
 
-//service repo-api {
-//
-//}
-//
-//service goods-api {
-//
-//}
+service api {
+	@handler getRepoList
+	get /api/v1/repo/list(RepoList) returns(RepoListReply)
+}
+
+service api {
+	@handler getGoodsList
+	get /api/v1/goods/list(GoodsList) returns(GoodsListReply)
+}

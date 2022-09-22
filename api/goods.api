@@ -19,8 +19,8 @@ type Goods {
 // GoodsListReply 商品列表返回
 type (
     GoodsList {
-        LimitNum int64 `json:"limitNum"`
-        Page int64 `json:"page"`
+        LimitNum int64 `form:"limitNum"`
+        Page int64 `form:"page"`
     }
     GoodsListReply {
 

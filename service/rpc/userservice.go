@@ -1,8 +1,8 @@
 package rpc
 
 import (
+	"cloud-mall/proto"
 	"context"
-	"gitee.com/cloud-mall/proto"
 	"github.com/pkg/errors"
 )
 
@@ -10,15 +10,15 @@ import (
 // @Params LoginName 登录用户名
 // @Params LoginPassword 登录用户密码
 type UserService struct {
-	LoginName string
+	LoginName     string
 	LoginPassword string
 }
 
-func (us UserService) Login(ctx context.Context) (*proto.ReturnLoginUser , error){
+func (us UserService) Login(ctx context.Context) (*proto.ReturnLoginUser, error) {
 	if us.LoginPassword == "" || us.LoginName == "" {
-		return nil , errors.Wrap(nil , "Please confirm the validity of the input.")
+		return nil, errors.Wrap(nil, "Please confirm the validity of the input.")
 	}
 	return &proto.ReturnLoginUser{
 		Token: "OK",
-	} , nil
+	}, nil
 }
